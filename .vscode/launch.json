@@ -1,0 +1,34 @@
+{
+    // MAIN
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Next.js",
+        "runtimeExecutable": "npx",
+        "runtimeArgs": [
+          "next",
+          "dev"
+        ],
+        "internalConsoleOptions": "neverOpen",
+        "env": {
+          "NODE_OPTIONS": "--inspect"
+        },
+        // "preLaunchTask": "tsc: build - tsconfig.json",
+      },
+      {
+          "type": "chrome",
+          "request": "launch",
+          "name": "Launch Chrome",
+          "url": "http://localhost:3000",
+          "webRoot": "${workspaceFolder}"
+      }
+    ],
+    "compounds": [
+      {
+        "name": "Both Run and Debug",
+        "configurations": ["Next.js", "Launch Chrome"]
+      }
+    ]
+}
